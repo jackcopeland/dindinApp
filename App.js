@@ -9,9 +9,8 @@ const rootStack = createStackNavigator({
     splash: splash,
     main: main,
   },{
-    initalRouteName: 'splash'
-  }
-) 
+    initalRouteName:'splash',}
+)
 
 
 const AppContainer = createAppContainer(rootStack)
