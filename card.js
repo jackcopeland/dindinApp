@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 
 export default class card extends React.Component {
     render() {
+        return (
         <View style={styles.container}>
             <View style={styles.top}>
                 <Text style={styles.title}>Alma Evans</Text>
@@ -11,13 +12,16 @@ export default class card extends React.Component {
             </View>
             <View style={styles.bottom}>
                 <View style={styles.respond}>
+                    <Image source={require('../assets/Combined Shape Copy 3.png')}  />
                     <Text style={styles.decline}>Decline</Text>
                 </View>
                 <View style={styles.respond}>
+                    <Image source={require('../assets/Combined Shape Copy 4.png')}  />
                     <Text style={styles.accept}>Accept</Text>
                 </View>
             </View>
         </View>
+        );
     }
 }
 const styles = StyleSheet.create({
@@ -36,6 +40,7 @@ const styles = StyleSheet.create({
     },
     bottom: {
         flexDirection: "row",
+        justifyContent: "space-between",
         width: "100%",
         height: "50%"
     },
