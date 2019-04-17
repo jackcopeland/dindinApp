@@ -1,7 +1,12 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView, Button} from 'react-native';
-import { StackNavigator } from 'react-navigation';
+  import * as React from 'react';
+import { Text, View, StyleSheet, Image, ScrollView, Button, TouchableOpacity} from 'react-native';
+import { StackNavigator, NavigationEvents } from 'react-navigation';
 import Card from './card';
+import CardForDetails from './cardForDetails';
+import MapViewDirections from 'react-native-maps-directions'; 
+
+
+
 
 export default class main extends React.Component {
 
@@ -27,6 +32,7 @@ export default class main extends React.Component {
    
 
   render() {
+    const {navigate} = this.props.navigation; 
     return (
 
       <View style={styles.container}>
@@ -47,8 +53,10 @@ export default class main extends React.Component {
       <Button title="December        " size = '9' color="black" onPress = ""/>
       </ScrollView>
       </View>
-      <View style={styles.card}>
+      <View style={styles.card} >
+      <TouchableOpacity style ={styles.card} onPress = {() => this.props.navigation.navigate('details')}>
       <Card></Card>
+      </TouchableOpacity>
       </View>
       <ScrollView>
       <View style={styles.events}>
@@ -92,6 +100,7 @@ export default class main extends React.Component {
         </View>
       </View>
       </ScrollView>
+
       </View>
       
    
